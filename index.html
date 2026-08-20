@@ -1,117 +1,196 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Satine Beauté | Lebanon</title>
-  <meta name="description" content="Satine Beauté — handmade skincare, scrubs, candles, lip balms & more. Crafted in Lebanon with love." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css" />
-</head>
-<body>
-  <header class="site-header">
-    <div class="container">
-      <div class="brand">
-        <span class="brand-name">Satine Beauté</span>
-        <span class="brand-tag">| Made in Lebanon</span>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Satine Beauté — handmade skincare and self-care from Lebanon."
+    />
+    <title>Satine Beauté | Lebanon</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Pinyon+Script&family=Playfair+Display:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="#top" aria-label="Satine Beauté home"
+          ><span class="brand-name">Satine Beauté</span
+          ><span class="brand-tag">| Made in Lebanon</span></a
+        >
+        <nav class="nav" aria-label="Main navigation">
+          <a href="#products">Products</a><a href="#about">About</a
+          ><a href="#contact">Order</a>
+        </nav>
       </div>
-      <nav class="nav" aria-label="Main">
-        <a href="#products">Products</a>
-        <a href="#about">About</a>
-        <a href="#contact">Order</a>
-      </nav>
-    </div>
-  </header>
+    </header>
 
-  <main>
-    <section class="hero">
-      <div class="container">
-        <div class="hero-inner">
+    <main id="top">
+      <section class="hero">
+        <div class="container hero-inner">
           <div class="hero-text">
-            <h1><span class="script">Satine</span> <span class="display">Beauté</span></h1>
-            <p class="hero-lead">Skincare & self-care, handmade with the softest materials — creams, scrubs, candles, lip balms, hair mists & more.</p>
-            <p class="hero-sub">Available soon. Follow us on Instagram <a href="https://instagram.com/satine.beaute" target="_blank" rel="noopener">@satine.beaute</a></p>
+            <h1>
+              <span class="script">Satine</span>
+              <span class="display">Beauté</span>
+            </h1>
+            <p class="hero-lead">
+              Skincare &amp; self-care, handmade with the softest materials —
+              creams, scrubs, candles, lip balms, hair mists &amp; more.
+            </p>
+            <p class="hero-sub">
+              Available soon. Follow us on Instagram
+              <a
+                href="https://instagram.com/satine.beaute"
+                target="_blank"
+                rel="noreferrer"
+                >@satine.beaute</a
+              >
+            </p>
             <div class="hero-actions">
-              <a class="btn primary" href="#products">Coming Soon</a>
-              <a class="btn ghost" href="https://wa.me/" target="_blank" rel="noopener">DM to Order</a>
+              <a class="btn primary" href="#products">Coming Soon</a
+              ><a
+                class="btn ghost"
+                href="https://wa.me/"
+                target="_blank"
+                rel="noreferrer"
+                >DM to Order</a
+              >
             </div>
           </div>
-          <div class="hero-art"><div class="satin-circle" aria-hidden="true"></div></div>
+          <div class="hero-art">
+            <div class="satin-circle">
+              <img
+                src="images/branding/satine-heart-monogram.jpg"
+                alt="Satine Beauté heart and B monogram"
+              />
+            </div>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section id="products" class="products">
+      <section id="products" class="products">
+        <div class="container">
+          <h2 class="section-title">First Collection</h2>
+          <p class="section-lead">
+            Hand-poured, hand-mixed — small batches only.
+          </p>
+          <div id="product-grid" class="grid" aria-live="polite"></div>
+          <p class="products-note">
+            More products coming soon. Prices &amp; photos update before launch.
+          </p>
+        </div>
+      </section>
+
+      <section id="about" class="about">
+        <div class="container two-col">
+          <div>
+            <h2 class="section-title">About</h2>
+            <p>
+              Satine Beauté is a small Lebanese beauty brand making handmade
+              skincare &amp; self-care products — with simple ingredients, soft
+              scents, and the kind of packaging you want to keep.
+            </p>
+            <p>
+              Every product is mixed in small batches, packed by hand, and
+              shipped worldwide. No big factory, no rush — just slow, careful
+              craft.
+            </p>
+          </div>
+          <div class="about-card">
+            <h3>By Satine</h3>
+            <p>Skincare creator based in Lebanon.</p>
+            <a
+              href="https://instagram.com/satine.beaute"
+              target="_blank"
+              rel="noreferrer"
+              >Follow the journey →</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="contact">
+        <div class="container">
+          <h2 class="section-title">Get in touch</h2>
+          <div class="contact-grid">
+            <a
+              class="contact-card"
+              href="https://wa.me/"
+              target="_blank"
+              rel="noreferrer"
+              ><span class="contact-label">WhatsApp</span
+              ><span class="contact-value">DM for orders</span></a
+            ><a
+              class="contact-card"
+              href="https://instagram.com/satine.beaute"
+              target="_blank"
+              rel="noreferrer"
+              ><span class="contact-label">Instagram</span
+              ><span class="contact-value">@satine.beaute</span></a
+            ><a class="contact-card" href="mailto:hello@satinebeaute.com"
+              ><span class="contact-label">Email</span
+              ><span class="contact-value">hello@satinebeaute.com</span></a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
       <div class="container">
-        <h2 class="section-title">First Collection</h2>
-        <p class="section-lead">Hand-poured, hand-mixed — small batches only.</p>
-        <div class="grid">
-          <button type="button" class="card" data-product="milky-body-mist" aria-label="Open Milky Body Mist details">
-            <div class="card-media"><img src="images/milky-body-mist.png" alt="Milky Body Mist" loading="lazy" /></div>
-            <h3>Milky Body Mist</h3><p>Nourish • Protect • Glow</p><span class="price">—</span>
-          </button>
-          <button type="button" class="card" data-product="shea-body-butter" aria-label="Open Shea Body Butter details">
-            <div class="card-media"><img src="images/shea-body-butter.png" alt="Shea Body Butter" loading="lazy" /></div>
-            <h3>Shea Body Butter</h3><p>Deep moisture & soft skin.</p><span class="price">—</span>
-          </button>
-          <button type="button" class="card" data-product="milky-hair-mist" aria-label="Open Milky Hair Mist details">
-            <div class="card-media"><img src="images/milky-hair-mist.png" alt="Milky Hair Mist" loading="lazy" /></div>
-            <h3>Milky Hair Mist</h3><p>Vitamin shine & smooth feel.</p><span class="price">—</span>
-          </button>
-          <button type="button" class="card" data-product="solid-perfume" aria-label="Open Solid Perfume details">
-            <div class="card-media"><img src="images/solid-perfume.png" alt="Solid Perfume" loading="lazy" /></div>
-            <h3>Solid Perfume</h3><p>Balm-based, portable luxury.</p><span class="price">—</span>
-          </button>
+        <p>© <span id="year"></span> Satine Beauté. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <section id="product-modal" class="modal" aria-hidden="true" hidden>
+      <div id="modal-backdrop" class="modal-backdrop"></div>
+      <div
+        class="modal-dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modal-title"
+        aria-describedby="modal-description"
+      >
+        <button
+          id="modal-close"
+          class="modal-close"
+          type="button"
+          aria-label="Close product details"
+        >
+          ×
+        </button>
+        <div class="modal-body">
+          <div class="modal-gallery">
+            <div id="gallery-scroll" class="gallery-scroll" tabindex="0"></div>
+            <span id="gallery-hint" class="gallery-hint"></span>
+          </div>
+          <div class="modal-info">
+            <h2 id="modal-title"></h2>
+            <p id="modal-tagline" class="modal-tagline"></p>
+            <p id="modal-description" class="modal-description"></p>
+            <fieldset id="scent-selector" class="scent-selector" hidden>
+              <legend>Choose your scent</legend>
+              <div id="scent-options" class="scent-options"></div>
+            </fieldset>
+            <p class="price">Coming soon</p>
+            <a
+              id="modal-order"
+              class="btn primary"
+              href="https://wa.me/"
+              target="_blank"
+              rel="noreferrer"
+              >DM to Order</a
+            >
+          </div>
         </div>
-        <p class="products-note">More products coming soon. Prices & photos update before launch.</p>
       </div>
     </section>
-
-    <section id="about" class="about">
-      <div class="container two-col">
-        <div>
-          <h2 class="section-title">About</h2>
-          <p>Satine Beauté is a small Lebanese beauty brand making handmade skincare & self-care products — with simple ingredients, soft scents, and the kind of packaging you want to keep.</p>
-          <p>Every product is mixed in small batches, packed by hand, and shipped worldwide. No big factory, no rush — just slow, careful craft.</p>
-        </div>
-        <div class="about-card">
-          <h3>By Satine</h3><p>Skincare creator based in Lebanon.</p>
-          <a href="https://instagram.com/satine.beaute" target="_blank" rel="noopener">Follow the journey →</a>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="contact">
-      <div class="container">
-        <h2 class="section-title">Get in touch</h2>
-        <div class="contact-grid">
-          <a class="contact-card" href="https://wa.me/" target="_blank" rel="noopener"><span class="contact-label">WhatsApp</span><span class="contact-value">DM for orders</span></a>
-          <a class="contact-card" href="https://instagram.com/satine.beaute" target="_blank" rel="noopener"><span class="contact-label">Instagram</span><span class="contact-value">@satine.beaute</span></a>
-          <a class="contact-card" href="mailto:hello@satinebeaute.com"><span class="contact-label">Email</span><span class="contact-value">hello@satinebeaute.com</span></a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer"><div class="container"><p>&copy; <span id="year"></span> Satine Beauté. All rights reserved.</p></div></footer>
-
-  <div class="modal" id="product-modal" aria-hidden="true">
-    <div class="modal-backdrop" data-close></div>
-    <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-      <button class="modal-close" data-close aria-label="Close">&times;</button>
-      <div class="modal-body">
-        <div class="modal-gallery"><img id="modal-image" src="" alt="" /></div>
-        <div class="modal-info">
-          <h2 id="modal-title"></h2><p id="modal-tagline" class="modal-tagline"></p><p id="modal-description" class="modal-description"></p>
-          <p class="price">Coming soon</p><a class="btn primary" href="https://wa.me/" target="_blank" rel="noopener">DM to Order</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <script src="js/products.js"></script>
-  <script src="js/main.js"></script>
-</body>
+    <script src="js/products.js"></script>
+    <script src="js/main.js"></script>
+  </body>
 </html>

@@ -1,122 +1,24 @@
-(function () {
-  const products = window.products || [],
-    grid = document.getElementById("product-grid"),
-    modal = document.getElementById("product-modal"),
-    closeButton = document.getElementById("modal-close"),
-    backdrop = document.getElementById("modal-backdrop"),
-    gallery = document.getElementById("gallery-scroll"),
-    hint = document.getElementById("gallery-hint"),
-    title = document.getElementById("modal-title"),
-    tagline = document.getElementById("modal-tagline"),
-    description = document.getElementById("modal-description"),
-    selector = document.getElementById("scent-selector"),
-    options = document.getElementById("scent-options"),
-    order = document.getElementById("modal-order");
-  let product = null,
-    scent = null,
-    previousFocus = null;
-  document.getElementById("year").textContent = new Date().getFullYear();
-  function updateOrder() {
-    const choice = scent ? " — " + scent : "",
-      message = product
-        ? "Hi Satine Beauté, I would like to order " +
-          product.name +
-          choice +
-          "."
-        : "Hi Satine Beauté, I would like to place an order.";
-    order.href = "https://wa.me/?text=" + encodeURIComponent(message);
-  }
-  function closeModal() {
-    modal.hidden = true;
-    modal.setAttribute("aria-hidden", "true");
-    document.body.classList.remove("modal-open");
-    if (previousFocus) previousFocus.focus();
-    product = null;
-    scent = null;
-  }
-  function renderScents(item) {
-    options.innerHTML = "";
-    if (!item.scents || !item.scents.length) {
-      selector.hidden = true;
-      return;
-    }
-    selector.hidden = false;
-    scent = item.scents[0];
-    item.scents.forEach(function (name, index) {
-      const label = document.createElement("label"),
-        input = document.createElement("input"),
-        text = document.createElement("span");
-      label.className = "scent-option";
-      input.type = "radio";
-      input.name = "scent-choice";
-      input.value = name;
-      input.checked = index === 0;
-      input.addEventListener("change", function () {
-        scent = name;
-        updateOrder();
-      });
-      text.textContent = name;
-      label.append(input, text);
-      options.appendChild(label);
-    });
-  }
-  function openProduct(item, trigger) {
-    previousFocus = trigger;
-    product = item;
-    scent = null;
-    title.textContent = item.name;
-    tagline.textContent = item.tagline;
-    description.textContent = item.description;
-    gallery.innerHTML = "";
-    item.images.forEach(function (path, index) {
-      const image = document.createElement("img");
-      image.src = path;
-      image.alt =
-        item.name + ", view " + (index + 1) + " of " + item.images.length;
-      gallery.appendChild(image);
-    });
-    gallery.scrollLeft = 0;
-    gallery.setAttribute(
-      "aria-label",
-      "Scroll through " + item.images.length + " photos of " + item.name,
-    );
-    hint.hidden = item.images.length < 2;
-    hint.textContent = "Scroll to see " + item.images.length + " photos →";
-    renderScents(item);
-    updateOrder();
-    modal.hidden = false;
-    modal.setAttribute("aria-hidden", "false");
-    document.body.classList.add("modal-open");
-    closeButton.focus();
-  }
-  products.forEach(function (item) {
-    const card = document.createElement("button"),
-      media = document.createElement("div"),
-      image = document.createElement("img"),
-      heading = document.createElement("h3"),
-      detail = document.createElement("p"),
-      price = document.createElement("span");
-    card.type = "button";
-    card.className = "card";
-    card.setAttribute("aria-label", "Open " + item.name + " details");
-    media.className = "card-media";
-    image.src = item.images[0];
-    image.alt = item.name;
-    image.loading = "lazy";
-    heading.textContent = item.name;
-    detail.textContent = item.tagline;
-    price.className = "price";
-    price.textContent = "—";
-    media.appendChild(image);
-    card.append(media, heading, detail, price);
-    card.addEventListener("click", function () {
-      openProduct(item, card);
-    });
-    grid.appendChild(card);
-  });
-  closeButton.addEventListener("click", closeModal);
-  backdrop.addEventListener("click", closeModal);
-  document.addEventListener("keydown", function (event) {
-    if (event.key === "Escape" && !modal.hidden) closeModal();
-  });
+(function(){
+  const products=window.products||[],CART_KEY="satine-beaute-cart-v1",INSTAGRAM_DM="https://ig.me/m/satine.beautelb";
+  const $=(id)=>document.getElementById(id),grid=$("product-grid"),modal=$("product-modal"),cartShell=$("cart-shell"),cartContent=$("cart-content"),gallery=$("gallery-scroll"),hint=$("gallery-hint"),title=$("modal-title"),tagline=$("modal-tagline"),description=$("modal-description"),selector=$("scent-selector"),options=$("scent-options");
+  let product=null,scent=null,cart=[],previousFocus=null;
+  $("year").textContent=new Date().getFullYear();
+  try{const stored=JSON.parse(localStorage.getItem(CART_KEY));if(Array.isArray(stored))cart=stored}catch(_){localStorage.removeItem(CART_KEY)}
+  function lockPage(){document.body.classList.toggle("overlay-open",!modal.hidden||!cartShell.hidden)}
+  function updateCount(){const count=cart.reduce((sum,item)=>sum+item.quantity,0);$("cart-count").textContent=count;$("cart-trigger").setAttribute("aria-label","Open bag with "+count+" item"+(count===1?"":"s"))}
+  function saveCart(){localStorage.setItem(CART_KEY,JSON.stringify(cart));updateCount()}
+  function closeModal(){modal.hidden=true;modal.setAttribute("aria-hidden","true");lockPage();if(previousFocus)previousFocus.focus();product=null;scent=null}
+  function openCart(){renderCart();cartShell.hidden=false;cartShell.setAttribute("aria-hidden","false");lockPage()}
+  function closeCart(){cartShell.hidden=true;cartShell.setAttribute("aria-hidden","true");lockPage()}
+  function fallbackCopy(text){const area=document.createElement("textarea");area.value=text;area.style.cssText="position:fixed;opacity:0";document.body.appendChild(area);area.select();const copied=document.execCommand("copy");area.remove();return copied}
+  function orderSummary(){return["Hi Satine Beauté, I would like to order:","",...cart.map(item=>"• "+item.quantity+" × "+item.name+(item.scent?" — "+item.scent:"")),"","Please confirm availability, price, and delivery details. Thank you!"].join("\n")}
+  async function copySummary(status){let copied=false;try{await navigator.clipboard.writeText(orderSummary());copied=true}catch(_){copied=fallbackCopy(orderSummary())}status.textContent=copied?"Order summary copied.":"Select and copy the order summary below."}
+  function makeButton(text,className,handler){const button=document.createElement("button");button.type="button";button.className=className;button.textContent=text;button.addEventListener("click",handler);return button}
+  function changeQuantity(key,change){cart=cart.flatMap(item=>item.key!==key?[item]:item.quantity+change>0?[{...item,quantity:item.quantity+change}]:[]);saveCart();renderCart()}
+  function renderCart(){cartContent.innerHTML="";if(!cart.length){const empty=document.createElement("div");empty.className="cart-empty";empty.innerHTML="<span>♡</span><h3>Your bag is waiting</h3><p>Choose a product, select its scent, and add it here.</p>";empty.appendChild(makeButton("Browse Collection","btn primary",()=>{closeCart();$("products").scrollIntoView({behavior:"smooth"})}));cartContent.appendChild(empty);return}const items=document.createElement("div");items.className="cart-items";cart.forEach(item=>{const article=document.createElement("article"),image=document.createElement("img"),details=document.createElement("div"),heading=document.createElement("h3"),footer=document.createElement("div"),quantity=document.createElement("div");article.className="cart-item";image.src=item.image;image.alt="";details.className="cart-item-details";heading.textContent=item.name;details.appendChild(heading);if(item.scent){const choice=document.createElement("p");choice.textContent=item.scent;details.appendChild(choice)}footer.className="cart-item-footer";quantity.className="quantity-controls";quantity.setAttribute("aria-label","Quantity for "+item.name);const minus=makeButton("−","",()=>changeQuantity(item.key,-1)),number=document.createElement("span"),plus=makeButton("+","",()=>changeQuantity(item.key,1));minus.setAttribute("aria-label","Decrease "+item.name+" quantity");plus.setAttribute("aria-label","Increase "+item.name+" quantity");number.textContent=item.quantity;quantity.append(minus,number,plus);footer.append(quantity,makeButton("Remove","remove-item",()=>{cart=cart.filter(entry=>entry.key!==item.key);saveCart();renderCart()}));details.appendChild(footer);article.append(image,details);items.appendChild(article)});const summary=document.createElement("div"),count=cart.reduce((sum,item)=>sum+item.quantity,0),countText=document.createElement("p"),status=document.createElement("p");summary.className="cart-summary";countText.textContent=count+" item"+(count===1?"":"s")+" ready to order";status.className="cart-help";status.setAttribute("aria-live","polite");status.textContent="We will copy your order details and open the Satine Beauté Instagram message thread.";const copy=makeButton("Copy Order Summary","btn ghost cart-copy",()=>copySummary(status)),order=makeButton("Order on Instagram","btn primary",()=>{const tab=window.open(INSTAGRAM_DM,"_blank","noopener,noreferrer");copySummary(status);status.textContent=tab?"Instagram is open and your order summary was copied. Paste it into the message, then send.":"Your order summary was copied. Open Instagram and message @satine.beautelb to send it."});summary.append(countText,copy,order,status);cartContent.append(items,summary)}
+  function renderScents(item){options.innerHTML="";if(!item.scents||!item.scents.length){selector.hidden=true;return}selector.hidden=false;scent=item.scents[0];item.scents.forEach((name,index)=>{const label=document.createElement("label"),input=document.createElement("input"),text=document.createElement("span");label.className="scent-option";input.type="radio";input.name="scent-choice";input.value=name;input.checked=index===0;input.addEventListener("change",()=>{scent=name});text.textContent=name;label.append(input,text);options.appendChild(label)})}
+  function openProduct(item,trigger){previousFocus=trigger;product=item;scent=null;title.textContent=item.name;tagline.textContent=item.tagline;description.textContent=item.description;gallery.innerHTML="";item.images.forEach((path,index)=>{const image=document.createElement("img");image.src=path;image.alt=item.name+", view "+(index+1)+" of "+item.images.length;gallery.appendChild(image)});gallery.scrollLeft=0;hint.hidden=item.images.length<2;hint.textContent="Scroll to see "+item.images.length+" photos →";renderScents(item);modal.hidden=false;modal.setAttribute("aria-hidden","false");lockPage();$("modal-close").focus()}
+  function addToBag(){if(!product)return;const key=product.slug+"-"+(scent||"default"),existing=cart.find(item=>item.key===key);if(existing)existing.quantity+=1;else cart.push({key,name:product.name,image:product.images[0],scent,quantity:1});saveCart();closeModal();openCart()}
+  products.forEach(item=>{const card=document.createElement("button"),media=document.createElement("div"),image=document.createElement("img"),heading=document.createElement("h3"),detail=document.createElement("p"),price=document.createElement("span");card.type="button";card.className="card";card.setAttribute("aria-label","Open "+item.name+" details");media.className="card-media";image.src=item.images[0];image.alt=item.name;image.loading="lazy";heading.textContent=item.name;detail.textContent=item.tagline;price.className="price";price.textContent="View & add";media.appendChild(image);card.append(media,heading,detail,price);card.addEventListener("click",()=>openProduct(item,card));grid.appendChild(card)});
+  $("modal-close").addEventListener("click",closeModal);$("modal-backdrop").addEventListener("click",closeModal);$("add-to-bag").addEventListener("click",addToBag);$("cart-trigger").addEventListener("click",openCart);$("hero-bag").addEventListener("click",openCart);$("contact-bag").addEventListener("click",openCart);$("cart-close").addEventListener("click",closeCart);$("cart-backdrop").addEventListener("click",closeCart);document.addEventListener("keydown",event=>{if(event.key==="Escape"){if(!modal.hidden)closeModal();else if(!cartShell.hidden)closeCart()}});updateCount()
 })();

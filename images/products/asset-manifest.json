@@ -1,0 +1,146 @@
+[
+  {
+    "name": "Hibiscus Body Scrub",
+    "slug": "hibiscus-body-scrub",
+    "images": [
+      "/home/ubuntu/webdev-static-assets/satine-larissa-products/hibiscus-body-scrub/01.png",
+      "/home/ubuntu/webdev-static-assets/satine-larissa-products/hibiscus-body-scrub/02.png",
+      "/home/ubuntu/webdev-static-assets/satine-larissa-products/hibiscus-body-scrub/03.png",
+      "/home/ubuntu/webdev-static-assets/satine-larissa-products/hibiscus-body-scrub/04.png"
+    ]
+  },
+  {
+    "name": "Coffee Body Scrub",
+    "slug": "coffee-body-scrub",
+    "images": [
+      "/home/ubuntu/webdev-static-assets/satine-larissa-products/coffee-body-scrub/01.png",
+      "/home/ubuntu/webdev-static-assets/satine-larissa-products/coffee-body-scrub/02.png",
+      "/home/ubuntu/webdev-static-assets/satine-larissa-products/coffee-body-scrub/03.png",
+      "/home/ubuntu/webdev-static-assets/satine-larissa-products/coffee-body-scrub/04.png"
+    ]
+  },
+  {
+    "name": "Ocean Bath & Body Salt",
+    "slug": "ocean-bath-and-body-salt",
+    "images": [
+      "/home/ubuntu/webdev-static-assets/satine-larissa-products/ocean-bath-and-body-salt/01.png",
+      "/home/ubuntu/webdev-static-assets/satine-larissa-products/ocean-bath-and-body-salt/02.png",
+      "/home/ubuntu/webdev-static-assets/satine-larissa-products/ocean-bath-and-body-salt/03.png",
+      "/home/ubuntu/webdev-static-assets/satine-larissa-products/ocean-bath-and-body-salt/04.png"
+    ]
+  },
+  {
+    "name": "Rose Bath & Body Salt",
+    "slug": "rose-bath-and-body-salt",
+    "images": [
+      "/home/ubuntu/webdev-static-assets/satine-larissa-products/rose-bath-and-body-salt/01.png",
+      "/home/ubuntu/webdev-static-assets/satine-larissa-products/rose-bath-and-body-salt/02.png",
+      "/home/ubuntu/webdev-static-assets/satine-larissa-products/rose-bath-and-body-salt/03.png",
+      "/home/ubuntu/webdev-static-assets/satine-larissa-products/rose-bath-and-body-salt/04.png"
+    ]
+  },
+  {
+    "name": "Lavender Bath & Body Salt",
+    "slug": "lavender-bath-and-body-salt",
+    "images": [
+      "/home/ubuntu/webdev-static-assets/satine-larissa-products/lavender-bath-and-body-salt/01.png",
+      "/home/ubuntu/webdev-static-assets/satine-larissa-products/lavender-bath-and-body-salt/02.png",
+      "/home/ubuntu/webdev-static-assets/satine-larissa-products/lavender-bath-and-body-salt/03.png",
+      "/home/ubuntu/webdev-static-assets/satine-larissa-products/lavender-bath-and-body-salt/04.png"
+    ]
+  },
+  {
+    "name": "Crystal Rose Body Scrub Soap",
+    "slug": "crystal-rose-body-scrub-soap",
+    "images": [
+      "/home/ubuntu/webdev-static-assets/satine-larissa-products/crystal-rose-body-scrub-soap/01.png",
+      "/home/ubuntu/webdev-static-assets/satine-larissa-products/crystal-rose-body-scrub-soap/02.png"
+    ]
+  },
+  {
+    "name": "Rose Body Scrub Soap",
+    "slug": "rose-body-scrub-soap",
+    "images": [
+      "/home/ubuntu/webdev-static-assets/satine-larissa-products/rose-body-scrub-soap/01.png",
+      "/home/ubuntu/webdev-static-assets/satine-larissa-products/rose-body-scrub-soap/02.png"
+    ]
+  },
+  {
+    "name": "Layered Rose & Chia Body Scrub Soap",
+    "slug": "layered-rose-and-chia-body-scrub-soap",
+    "images": [
+      "/home/ubuntu/webdev-static-assets/satine-larissa-products/layered-rose-and-chia-body-scrub-soap/01.png",
+      "/home/ubuntu/webdev-static-assets/satine-larissa-products/layered-rose-and-chia-body-scrub-soap/02.png",
+      "/home/ubuntu/webdev-static-assets/satine-larissa-products/layered-rose-and-chia-body-scrub-soap/03.png"
+    ]
+  },
+  {
+    "name": "Coffee Body Scrub Soap",
+    "slug": "coffee-body-scrub-soap",
+    "images": [
+      "/home/ubuntu/webdev-static-assets/satine-larissa-products/coffee-body-scrub-soap/01.png",
+      "/home/ubuntu/webdev-static-assets/satine-larissa-products/coffee-body-scrub-soap/02.png"
+    ]
+  },
+  {
+    "name": "Layered Coffee Loofah Scrub Soap",
+    "slug": "layered-coffee-loofah-scrub-soap",
+    "images": [
+      "/home/ubuntu/webdev-static-assets/satine-larissa-products/layered-coffee-loofah-scrub-soap/01.png",
+      "/home/ubuntu/webdev-static-assets/satine-larissa-products/layered-coffee-loofah-scrub-soap/02.png"
+    ]
+  },
+  {
+    "name": "Coffee Loofah Scrub Soap",
+    "slug": "coffee-loofah-scrub-soap",
+    "images": [
+      "/home/ubuntu/webdev-static-assets/satine-larissa-products/coffee-loofah-scrub-soap/01.png",
+      "/home/ubuntu/webdev-static-assets/satine-larissa-products/coffee-loofah-scrub-soap/02.png"
+    ]
+  },
+  {
+    "name": "Coffee Massage Scrub Soap",
+    "slug": "coffee-massage-scrub-soap",
+    "images": [
+      "/home/ubuntu/webdev-static-assets/satine-larissa-products/coffee-massage-scrub-soap/01.png",
+      "/home/ubuntu/webdev-static-assets/satine-larissa-products/coffee-massage-scrub-soap/02.png"
+    ]
+  },
+  {
+    "name": "Layered Coffee Massage Loofah Scrub Soap",
+    "slug": "layered-coffee-massage-loofah-scrub-soap",
+    "images": [
+      "/home/ubuntu/webdev-static-assets/satine-larissa-products/layered-coffee-massage-loofah-scrub-soap/01.png",
+      "/home/ubuntu/webdev-static-assets/satine-larissa-products/layered-coffee-massage-loofah-scrub-soap/02.png"
+    ]
+  },
+  {
+    "name": "Lip Balm",
+    "slug": "lip-balm",
+    "images": [
+      "/home/ubuntu/webdev-static-assets/satine-larissa-products/lip-balm/01.png",
+      "/home/ubuntu/webdev-static-assets/satine-larissa-products/lip-balm/02.png",
+      "/home/ubuntu/webdev-static-assets/satine-larissa-products/lip-balm/03.png"
+    ]
+  },
+  {
+    "name": "Solid Perfume",
+    "slug": "solid-perfume",
+    "images": [
+      "/home/ubuntu/webdev-static-assets/satine-larissa-products/solid-perfume/01.png",
+      "/home/ubuntu/webdev-static-assets/satine-larissa-products/solid-perfume/02.png",
+      "/home/ubuntu/webdev-static-assets/satine-larissa-products/solid-perfume/03.png",
+      "/home/ubuntu/webdev-static-assets/satine-larissa-products/solid-perfume/04.png"
+    ]
+  },
+  {
+    "name": "Shea Body Butter",
+    "slug": "shea-body-butter",
+    "images": [
+      "/home/ubuntu/webdev-static-assets/satine-larissa-products/shea-body-butter/01.png",
+      "/home/ubuntu/webdev-static-assets/satine-larissa-products/shea-body-butter/02.png",
+      "/home/ubuntu/webdev-static-assets/satine-larissa-products/shea-body-butter/03.png",
+      "/home/ubuntu/webdev-static-assets/satine-larissa-products/shea-body-butter/04.png"
+    ]
+  }
+]

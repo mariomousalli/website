@@ -4,5 +4,14 @@
   "compatibility_date": "2026-08-31",
   "assets": {
     "directory": "./website"
+  },
+  "routes": [
+    {
+      "pattern": "satinebeaute.com/api/order",
+      "custom_domain": true
+    }
+  ],
+  "vars": {
+    "FROM_EMAIL": "Satine Beauté <orders@satinebeaute.com>"
   }
 }

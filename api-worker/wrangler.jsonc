@@ -6,7 +6,7 @@
   "workers_dev": false,
   "routes": [
     {
-      "pattern": "api.satinebeaute.com/*",
+      "pattern": "api.satinebeaute.com",
       "custom_domain": true
     }
   ]

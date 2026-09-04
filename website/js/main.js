@@ -18,7 +18,7 @@
   async function sendOrder(status,name,phone){
     status.textContent="Sending your order…";
     try{
-      const res=await fetch("/api/order",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({name,phone,order:orderSummary(),total:subtotal()})});
+      const res=await fetch("https://api.satinebeaute.com",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({name,phone,order:orderSummary(),total:subtotal()})});
       if(res.ok){status.textContent="✓ Order sent! We'll get back to you soon.";status.className="cart-help cart-success";setTimeout(()=>{closeCart();cart=[];saveCart()},2500)}
       else{status.textContent="Something went wrong. Please try again or message us on Instagram.";status.className="cart-help cart-error"}
     }catch(_){status.textContent="Network error. Please check your connection and try again.";status.className="cart-help cart-error"}
